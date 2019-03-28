@@ -5,9 +5,19 @@
 
     &:not(:last-child) {
         margin-bottom: $gutter-vertical;
+        
+        @include respond(tab-port) {
+            margin-bottom: $gutter-vertical-small;
+                    }
     }
 
+    @include respond(tab-port) {
+        max-width: 50rem;
+        padding: 0 3rem;
+    }
     @include clearfix;
+
+
 
 /* ^ all that strat with col- ;;; * any that containt col- ;;; $ any class that ends with col- */
     
@@ -16,6 +26,15 @@
 
         &:not(:last-child) {
             margin-right: $gutter-horizontal;
+
+            @include respond(tab-port) {
+                width: 100% !important;
+                margin-bottom: $gutter-vertical-small;
+            }
+        }
+
+        @include respond(tab-port) {
+            width: 100% !important;
         }
     }
     .col-1-of-2 {
